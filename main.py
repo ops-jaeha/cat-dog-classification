@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Import Library
 import os
 import torch
@@ -37,5 +36,23 @@ data_transform = transforms.Compose([
     transforms.RandomCrop(224),
     transforms.Resize(128),
     transforms.ToTensor()])
-=======
->>>>>>> 95dfcb38c4bb0dd70426dd7fbac3af1666872263
+
+
+# Parameter
+train_dir = '/data/training_set/training_set/'
+test_dir = '/data/test_set/test_set/'
+mission_dir = '/data/Mission/'
+
+train_files = os.listdir(train_dir)
+test_files = os.listdir(test_dir)
+mission_files = os.listdir(mission_dir)
+
+cat_files = [tf for tf in train_files if 'cat' in tf]
+dog_files = [tf for tf in train_files if 'dog' in tf]
+cats = CustomData(cat_files, train_dir, transforms = data_transform)
+dogs = CustomData(dog_files, train_dir, transforms = data_transform)
+catdogs = ConcatDataset([cats, dogs])
+trainloader = DataLoader(catdogs, batch_size=32, shuffle=True, num_workers=0)
+
+# https://www.secmem.org/blog/2020/03/19/Image-Classification/
+# criterion 부터
