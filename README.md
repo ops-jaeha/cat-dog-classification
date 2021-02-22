@@ -1,6 +1,11 @@
 # Cat_VS_Dog_Classification
 Classification Model을 직접 만들어본다.
 
+## Installation
+```
+Please Check Installation in [Install.md](Install.md)
+```
+
 ## Download Data
 ```
 https://kaggle.com/tongpython/cat-and-dog
