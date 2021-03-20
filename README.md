@@ -2,9 +2,7 @@
 Classification Model을 만들어보았다.
 
 ## Installation
-```
 Please Check Installation in [Install.md](Install.md)
-```
 
 ## Download Data
 ```
